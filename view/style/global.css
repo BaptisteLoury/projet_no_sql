@@ -1,0 +1,247 @@
+:root {
+    --top-nav-bar-height: 40px;
+    --footer-height: 30px;
+    --lateral-bar-width: 300px;
+    --primary-color: #011e30;
+    --secondary-color: #033351;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: system-ui;
+}
+
+header {
+    width: 100%;
+    height: var(--top-nav-bar-height);
+    background-color: var(--primary-color);
+}
+
+#top-nav {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#nav-container {
+    width: 100%;
+    height: 100%;
+}
+    #nav-container a {
+        text-decoration: none;
+    }
+        #nav-container a:hover li {
+            background-color:  #0b466c;
+        }
+    #nav-container ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-end;
+    }
+    #nav-container li {
+        color: white;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        box-sizing: border-box;
+    }
+        .normal-tab {
+            width: 175px;
+        }
+        .parameter-tab {
+            width: 50px;
+        }
+        #nav-container li > img {
+            height: 20px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        .normal-tab img {
+            margin-left: 20px;
+        }
+        .search-tab button {
+            background-color: black;
+            border: none;
+            padding: 5px;
+            margin: 0 10px 0 0;
+            border-radius: 15px;
+        }
+        .search-tab button:hover {
+            background-color: darkslategrey;
+        }
+        .search-tab button img {
+            margin: 0;
+            height: 20px;
+        }
+        .search-tab input[type=search] {
+            width: 175px;
+            margin-right: 5px;
+            margin-left: 10px;
+        }
+        .disconnect img {
+            margin-right: 10px;
+        }
+
+main {
+    width: 100%;
+    height: calc(100vh - var(--top-nav-bar-height) - var(--footer-height));
+    box-sizing: border-box;
+    display: flex;
+}
+    #lateral-bar {
+        width: var(--lateral-bar-width);
+        background-color: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    #logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: calc(var(--lateral-bar-width));
+        background-color: var(--primary-color);
+    }
+            #logo-container img {
+                height: 38px;
+                z-index: 99;
+            }
+    .scroll-container {
+        height: 100%;
+        width: calc(100vw - var(--lateral-bar-width));
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-flow: row wrap;
+        background-color: rgb(241, 240, 244);
+        flex-grow: 1;
+    }
+    #home, #profile {
+        overflow-y: scroll;
+    }
+        #trend {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+            #trend-title {
+                margin: 30px 0 20px 20px;
+                font-weight: bold;
+                font-size: 1.4em;
+            }
+            #trend-list {
+                flex-grow: 1;
+                overflow-y: auto;
+                margin: 0 15px;
+            }
+                .comp-trending-user {
+                    width: calc(100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1px 0;
+                    margin-bottom: 5px;
+                }
+                #trend-list a {
+                    color: white;
+                    text-decoration: none;
+                    margin-bottom: 10px;
+                }
+                .comp-trending-user:hover {
+                    background-color: #001624;
+                }
+                .comp-trending-user-left {
+                    display: flex;
+                    align-items: center;
+                    flex-grow: 1;
+                    overflow: hidden;
+                }
+                    .comp-trending-user-left img {
+                        display: block;
+                        background-color: white;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 15px;
+                    }
+                    .comp-trending-user span {
+                        margin-left: 10px;
+                        text-decoration: underline;
+                    }
+                .comp-trending-user-right {
+                    display: flex;
+                    align-items: center;
+                }
+                    .comp-trending-user-right img {
+                        width: 18px;
+                        height: 18px;
+                        margin-left: 5px;
+                        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(336deg) brightness(118%) contrast(94%);
+                    }
+        #trend-list hr {
+            width: 50%;
+            margin: 0 25% 5PX 25%;
+            background-color: rgb(196, 196, 196);
+            height: 1px;
+        }
+        #admin {
+            overflow-y: auto;
+            width: 100%;
+        }
+        #admin table {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border-collapse: collapse;
+        }
+        #admin table td, #admin table th {
+            text-align: center;
+            height: 30px;
+            border: 1px solid black;
+        }
+        td form {
+            width: 100%;
+            height: 100%;
+        }
+        td form input[type=submit] {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0%;
+        }
+
+
+footer{
+    background-color: var(--primary-color);
+    height: var(--footer-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logoLeft{
+    margin-left: 10px;
+}
+
+footer .message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width:50%;
+    font-size: 0.8em;
+}
+    footer a {
+        color: white;
+        text-decoration: none;
+    }

@@ -1,0 +1,134 @@
+#edit-profile {
+    width: 100%;
+    color: white;
+}
+    #edit-profile-img {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        #edit-profile-img-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            background-color: white;
+            overflow: hidden;
+        }
+        #edit-profile-img-circle img {
+            width: 150px;
+            height: 150px;
+        }
+    #edit-profile-pseudo {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        #edit-profile-pseudo button {
+            width: 30px;
+            height: 20px;
+            background-color: transparent;
+            border: none;
+        }
+            #edit-profile-pseudo button img {
+                height: 20px;
+                filter: invert(99%) sepia(1%) saturate(116%) hue-rotate(23deg) brightness(121%) contrast(100%);
+            }
+            #edit-profile-pseudo button:hover img {
+                filter: invert(100%) sepia(0%) saturate(5653%) hue-rotate(312deg) brightness(100%) contrast(63%);
+            }
+            #follow-button.active img {
+                filter: invert(23%) sepia(25%) saturate(6084%) hue-rotate(345deg) brightness(100%) contrast(121%);
+            }
+
+            #follow-button.active:hover img {
+                filter: invert(35%) sepia(69%) saturate(739%) hue-rotate(320deg) brightness(101%) contrast(72%);
+            }
+        #edit-profile-bio-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin: 10px 15px;
+        }
+            #edit-profile-bio-title-trophies {
+                display: flex;
+                align-items: center;
+            }
+            #edit-profile-bio-title-trophies img, #edit-profile-bio-title-trophies span {
+                height: 30px;
+                display: block;
+                display: flex;
+                align-items: center;
+            }
+        #edit-profile-bio-call {
+            font-weight: bold;
+            color: white;
+            margin: 0 0 5px 10px;
+        }
+        #edit-profile-bio-text {
+            margin: 0 15px;
+            color: var(--primary-color);
+            background-color: white;
+            /* box-shadow: 0 0 4px 3px var(--primary-color) inset; */
+            padding: 5px;
+            border-radius: 10px;
+            text-align: justify;
+        }
+    #edit-profile form input {
+        margin: 10px 15px 0 15px;
+        width: calc(100% - 30px);
+        border: none;
+        background-color: white;
+        color: var(--primary-color);
+        padding: 5px 0;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+    
+    #edit-profile form input:hover {
+        background-color: #d8d0d0;
+    }
+#follow-title {
+    font-weight: bold;
+    color: white;
+    margin: 10px 0 15px 10px;
+}
+#follow-list {
+    margin: 0 calc( (var(--lateral-bar-width) - 250px) / 2);
+    flex-grow: 1;
+    overflow-y: scroll;
+    width: 250px;
+    background-color: var(--primary-color);
+    padding: 5px;
+    margin-bottom: 5px;
+}
+    .comp-follow {
+        width: calc(100%);
+        display: flex;
+        align-items: center;
+        padding: 1px 0;
+        border-bottom: 1px dotted white;
+    }
+        .comp-follow img {
+            display: block;
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+        }
+        .comp-follow span {
+            margin-left: 10px;
+        }
+    #follow-list a {
+        color: white;
+    }
+    #follow-list .comp-follow:hover {
+        background-color: #001624;
+    }
