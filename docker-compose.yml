@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  web-server:
+  php-apache:
     container_name: php-apache
     build:
       context: .
@@ -8,3 +8,18 @@ services:
     ports:
      - "8080:80"
         
+  postgres:
+    container_name: postgres
+    environment:
+      POSTGRES_DB: unposteur
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+    image: postgres:latest
+    ports: 
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+    - postgres_data:/var/lib/postgresql/data:rw
+
+volumes:
+  postgres_data: {}
