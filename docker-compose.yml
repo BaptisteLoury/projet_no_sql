@@ -1,41 +1,40 @@
 version: '3.7'
 services:
-	web-server:
-		container_name: web-server
-		image: tomcat:latest
-		depends_on:
-			postgres:
-				condition: service_started
-			mongdb:
-				condition: service_started
-		ports:
-			- 8080:8080
-		networks:
-			- internal
-		restart: unless-stopped
+  web-server:
+    container_name: web-server
+    image: tomcat:latest
+    depends_on:
+      postgres:
+        condition: service_started
+      mongdb:
+        condition: service_started
+    ports:
+      - 8080:8080
+    networks:
+      - internal
+    restart: unless-stopped
 
-	postgres:
-		container_name: postgres
-		image: postgres:latest
-		environment:
-			HOSTNAME: pj_no_sql
-			POSTGRES_PASSWORD: adminpwd
-			POSTGRES_PASSWORD: admin
-		ports:
-			- 5432:5432
-		networks:
-			- internal
-		restart: unless-stopped
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      HOSTNAME: pj_no_sql
+      POSTGRES_PASSWORD: adminpwd
+    ports:
+      - 5432:5432
+    networks:
+      - internal
+    restart: unless-stopped
 
-	mongodb:
-		container_name: mongodb
-		image: mongodb:latest
-		ports:
-			- 5433:5433
-		networks:
-			- internal
-		restart: unless-stopped
+  mongodb:
+    container_name: mongodb
+    image: mongodb:latest
+    ports:
+      - 5433:5433
+    networks:
+      - internal
+    restart: unless-stopped
 
-	networks:
-		internal:
-			name: internal_network
+  networks:
+    internal:
+      name: internal_network
