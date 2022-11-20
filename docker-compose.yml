@@ -11,14 +11,17 @@ services:
       - type: bind
         source: ./src
         target: /var/www/html
-        
+    links: 
+     - "postgres:container_unposteur"
   postgres:
     container_name: postgres
     environment:
       POSTGRES_DB: unposteur
       POSTGRES_PASSWORD: admin
       POSTGRES_USER: admin
-    image: postgres:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
     ports: 
       - "5433:5432"
     restart: unless-stopped

@@ -1,12 +1,12 @@
-DELETE FROM main.flaged;
-DELETE FROM main.follow;
-DELETE FROM main.comment;
-DELETE FROM main.posses;
-DELETE FROM main.liked;
-DELETE FROM main.posts;
-DELETE FROM main.users;
-DELETE FROM main.rights;
-DELETE FROM main.role;
+-- DELETE FROM main.flaged;
+-- DELETE FROM main.follow;
+-- DELETE FROM main.comment;
+-- DELETE FROM main.posses;
+-- DELETE FROM main.liked;
+-- DELETE FROM main.posts;
+-- DELETE FROM main.users;
+-- DELETE FROM main.rights;
+-- DELETE FROM main.role;
 
 ALTER SEQUENCE main.role_rol_id_seq RESTART WITH 1;
 INSERT INTO main.role (rol_name) VALUES ('admin');

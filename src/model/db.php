@@ -6,7 +6,7 @@ class DB
 
     function __construct()
     {
-        $this->dbconn = pg_connect("host=localhost dbname=unposteur user=admin password=admin")
+        $this->dbconn = pg_connect("host=container_unposteur dbname=unposteur user=admin password=admin")
         or die('Connexion impossible : ' . pg_last_error());
     }
 

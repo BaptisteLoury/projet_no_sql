@@ -1,15 +1,15 @@
-DROP TABLE IF EXISTS main.flaged;
-DROP TABLE IF EXISTS main.follow;
-DROP TABLE IF EXISTS main.comment;
-DROP TABLE IF EXISTS main.posses;
-DROP TABLE IF EXISTS main.liked;
-DROP TABLE IF EXISTS main.discovered;
-DROP TABLE IF EXISTS main.posts;
-DROP TABLE IF EXISTS main.users;
-DROP TABLE IF EXISTS main.rights;
-DROP TABLE IF EXISTS main.role;
+-- DROP TABLE IF EXISTS main.flaged;
+-- DROP TABLE IF EXISTS main.follow;
+-- DROP TABLE IF EXISTS main.comment;
+-- DROP TABLE IF EXISTS main.posses;
+-- DROP TABLE IF EXISTS main.liked;
+-- DROP TABLE IF EXISTS main.discovered;
+-- DROP TABLE IF EXISTS main.posts;
+-- DROP TABLE IF EXISTS main.users;
+-- DROP TABLE IF EXISTS main.rights;
+-- DROP TABLE IF EXISTS main.role;
 
-DROP SCHEMA main CASCADE;
+-- DROP SCHEMA main CASCADE;
 
 CREATE SCHEMA main;
 
