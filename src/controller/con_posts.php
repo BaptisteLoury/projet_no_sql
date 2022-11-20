@@ -34,7 +34,6 @@ function insertPost(Post $post)
         'impost_id' => (int)$post->impost_id,
         'usr_id' => (int)$post->usr,
     );
-    var_dump($insert);
     $co = new DB();
     if (!pg_insert($co->getDbconn(), 'main.posts', $insert)){
         $co->close();

@@ -1,3 +1,4 @@
 FROM php:7.4-apache
 RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pgsql
-RUN chown -R www-data users/
+RUN mkdir /var/www/html/users
+RUN chown -R www-data /var/www/html/users/
