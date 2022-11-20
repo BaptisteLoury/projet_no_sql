@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     $file=basename(__FILE__);
