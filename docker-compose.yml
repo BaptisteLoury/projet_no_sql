@@ -7,6 +7,10 @@ services:
       dockerfile: Dockerfile.php-apache
     ports:
      - "8080:80"
+    volumes:
+      - type: bind
+        source: ./src
+        target: /var/www/html
         
   postgres:
     container_name: postgres
@@ -16,7 +20,7 @@ services:
       POSTGRES_USER: admin
     image: postgres:latest
     ports: 
-      - "5432:5432"
+      - "5433:5432"
     restart: unless-stopped
     volumes:
     - postgres_data:/var/lib/postgresql/data:rw
