@@ -13,6 +13,7 @@ services:
         target: /var/www/html
     links: 
      - "postgres:container_unposteur"
+     - "redis:container_redis"
   postgres:
     container_name: postgres
     environment:
@@ -27,6 +28,13 @@ services:
     restart: unless-stopped
     volumes:
     - postgres_data:/var/lib/postgresql/data:rw
+  redis:
+    container_name: "redis"
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    command:
+        --requirepass mdp
 
 volumes:
   postgres_data: {}
