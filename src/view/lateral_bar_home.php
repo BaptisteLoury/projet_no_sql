@@ -8,13 +8,15 @@
                 require_once("../controller/con_posts.php");
                 require_once("../model/post.php");
                 require_once("../model/db.php");
-                $topusers = getTop10Likes();
-                $i = 0;
-                foreach($topusers as $tuser) {
+                require_once("../model/redis.php");
+                $cache = new Cache();
+                $redis = $cache->getConn();
+
+                $i = 1;
+                while($redis->exists("trend_user_" . $i)) {
+                    $tuser = $redis->lrange("trend_user_" . $i, 0, -1);
                     require("comp_trending_user.php");
-                    if($i != 9)
-                        echo "<hr>";
-                    $i++;
+                    $i += 1;
                 }
             ?>
         </div>

@@ -1,12 +1,12 @@
 <?php
-    $id_tusr = $tuser['usr_id'];
+    $id_tusr = $tuser[0];
     if(file_exists("../users/$id_tusr/pp.jpg")) {
         $img = "../users/$id_tusr/pp.jpg";
     }
     else
         $img = "../media/img/spy.png";
-    $name = $tuser['usr_pseudo'];
-    $nbLike = $tuser['nb_likes']
+    $name = $tuser[1];
+    $nbLike = $tuser[2]
 ?>
 <a href="view_other.php?searched_usr=<?php echo $id_tusr; ?>"><div class="comp-trending-user">
     <div class="comp-trending-user-left">
