@@ -9,10 +9,8 @@ $co = $d->getDbconn();
 
 $_SESSION['usr_bio'] = $_POST['textNewBio'];
 $content = pg_escape_string($_POST['textNewBio']);
-var_dump($content);
 $query = "UPDATE main.users SET usr_bio = '$content' WHERE usr_id = ".$_SESSION['usr_id'];
 $result = pg_query($query);
-
 
 if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
     
