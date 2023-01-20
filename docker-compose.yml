@@ -2,9 +2,10 @@ version: '3.7'
 services:
   php-apache:
     container_name: php-apache
-    build:
-      context: .
-      dockerfile: Dockerfile.php-apache
+    image: asmadas/projet_no_sql-php-apache
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.php-apache
     ports:
      - "8080:80"
     volumes:
